@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌴 曼谷 & 巴厘岛 17天行程 · 热岛计划</title>
+<style>
+:root{
+  --ink:#2A3A4B;
+  --ink-2:#5E7183;
+  --ink-3:#8A99A8;
+  --cream:#FFF9F1;
+  --card:#FFFFFF;
+  --line:#F1E4D3;
+  --sun:#FFC53D;
+  --sunset:#FF9E4F;
+  --coral:#FF7A5C;
+  --ocean:#10B3A3;
+  --lagoon:#37BFDC;
+  --palm:#37A474;
+  --lilac:#9C7BE0;
+  --shadow-s:0 2px 8px rgba(180,140,90,.10);
+  --shadow-m:0 8px 24px rgba(180,140,90,.14);
+  --shadow-l:0 18px 44px rgba(180,140,90,.20);
+  --r:20px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Segoe UI",Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  background-image:
+    radial-gradient(900px 520px at 8% -4%, rgba(255,197,61,.28), transparent 62%),
+    radial-gradient(760px 480px at 96% 4%, rgba(55,191,220,.22), transparent 60%),
+    radial-gradient(700px 500px at 50% 108%, rgba(255,122,92,.16), transparent 62%);
+  background-attachment:fixed;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px;}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;overflow:hidden;
+  margin:22px auto 0;border-radius:28px;
+  background:linear-gradient(120deg,#FFF4D9 0%,#FFE1A8 26%,#FFC48C 52%,#FFAE9B 74%,#7FD9CF 100%);
+  box-shadow:var(--shadow-l);
+}
+.hero-in{position:relative;padding:38px 30px 30px;z-index:2;}
+.hero .leaf{position:absolute;opacity:.30;pointer-events:none;z-index:1;}
+.hero .leaf.l1{right:-30px;top:-40px;width:270px;transform:rotate(8deg);}
+.hero .leaf.l2{left:-46px;bottom:-60px;width:230px;transform:rotate(-14deg);opacity:.24;}
+.hero .sun{position:absolute;right:38px;top:26px;width:96px;opacity:.55;z-index:1;animation:spin 46s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.badge{
+  background:rgba(255,255,255,.72);backdrop-filter:blur(4px);
+  border:1px solid rgba(255,255,255,.9);
+  color:#B4512C;font-size:12.5px;font-weight:700;
+  padding:5px 13px;border-radius:999px;
+}
+.hero h1{
+  margin:0 0 8px;font-size:clamp(25px,4.6vw,40px);line-height:1.22;letter-spacing:-.5px;
+  color:#20323F;text-shadow:0 1px 0 rgba(255,255,255,.5);
+}
+.hero .sub{color:#4A5B66;font-size:14.5px;margin:0 0 22px;font-weight:600;}
+
+/* countdown */
+.cd-panel{
+  background:rgba(255,255,255,.80);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.95);
+  border-radius:22px;padding:18px 20px;box-shadow:var(--shadow-m);
+  max-width:760px;
+}
+.cd-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+.cd-label{font-size:13.5px;font-weight:800;color:#B4512C;letter-spacing:.3px;}
+.cd-target{font-size:12.5px;color:#7A6560;font-weight:600;}
+.cd-units{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.cd-u{
+  background:linear-gradient(180deg,#FFFFFF,#FFF6EA);
+  border:1px solid #FFE2C2;border-radius:16px;padding:12px 6px;text-align:center;
+  box-shadow:0 2px 6px rgba(200,150,90,.12);
+}
+.cd-u .n{
+  font-size:clamp(24px,5vw,34px);font-weight:900;line-height:1;
+  color:#E8622F;font-variant-numeric:tabular-nums;letter-spacing:-1px;
+  transition:transform .25s ease;
+}
+.cd-u .n.tick{transform:scale(1.09);}
+.cd-u .l{font-size:11.5px;color:#9A8578;margin-top:6px;font-weight:700;letter-spacing:1px;}
+.cd-note{margin-top:12px;font-size:12.5px;color:#6F5B52;font-weight:600;}
+.cd-note b{color:#E8622F;}
+.cd-done{font-size:20px;font-weight:900;color:#E8622F;text-align:center;padding:14px 0 6px;}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:60;margin-top:16px;
+  background:rgba(255,252,246,.88);backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:999px;
+  box-shadow:var(--shadow-s);
+  padding:7px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{
+  flex:1 0 auto;text-align:center;text-decoration:none;color:var(--ink-2);
+  font-size:13.5px;font-weight:700;padding:9px 16px;border-radius:999px;
+  transition:.22s;white-space:nowrap;
+}
+.nav a:hover{background:#FFF0DA;color:var(--ink);}
+.nav a.on{background:linear-gradient(135deg,var(--sunset),var(--coral));color:#fff;box-shadow:0 4px 12px rgba(255,122,92,.34);}
+
+/* ============ SECTION ============ */
+section{margin-top:52px;scroll-margin-top:96px;}
+.sec-h{display:flex;align-items:flex-end;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+.sec-h h2{
+  margin:0;font-size:22px;font-weight:900;letter-spacing:-.3px;
+  display:flex;align-items:center;gap:9px;
+}
+.sec-h .bar{width:5px;height:24px;border-radius:3px;background:linear-gradient(180deg,var(--sun),var(--coral));}
+.sec-h .desc{font-size:12.5px;color:var(--ink-3);font-weight:600;padding-bottom:2px;}
+
+/* ============ STATS ============ */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;}
+.stat{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:16px 16px 14px;box-shadow:var(--shadow-s);position:relative;overflow:hidden;
+  transition:.25s;
+}
+.stat:hover{transform:translateY(-4px);box-shadow:var(--shadow-m);}
+.stat::after{content:"";position:absolute;right:-22px;top:-22px;width:74px;height:74px;border-radius:50%;background:currentColor;opacity:.10;}
+.stat .n{font-size:28px;font-weight:900;line-height:1;letter-spacing:-1px;}
+.stat .t{font-size:12.5px;color:var(--ink-2);margin-top:7px;font-weight:700;}
+.stat .s{font-size:11px;color:var(--ink-3);margin-top:2px;}
+
+/* ============ RAIL ============ */
+.rail-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:18px 18px 14px;box-shadow:var(--shadow-s);margin-top:14px;
+}
+.rail-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+.rail-top .rt{font-size:13px;font-weight:800;color:var(--ink);}
+.rail-top .rh{font-size:11.5px;color:var(--ink-3);font-weight:600;}
+.prog{margin-bottom:14px;}
+.prog .pt{display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:var(--ink-2);margin-bottom:6px;}
+.prog .ptrack{height:10px;border-radius:6px;background:#F3E8DA;position:relative;}
+.prog .pfill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--sun),var(--sunset),var(--coral));transition:width .5s ease;}
+.prog .pmark{position:absolute;top:-4px;width:4px;height:18px;border-radius:3px;background:var(--ocean);box-shadow:0 0 0 2px #fff;transform:translateX(-2px);transition:left .5s ease;}
+.rail-scroll{overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;}
+.rail{display:flex;align-items:stretch;gap:0;min-width:max-content;padding:2px;}
+.node{
+  position:relative;min-width:52px;padding:8px 4px 6px;text-align:center;cursor:pointer;
+  border-radius:12px;transition:.2s;flex:1 0 auto;
+}
+.node:hover{background:#FFF6E8;}
+.node .nd{font-size:13px;font-weight:900;letter-spacing:-.3px;}
+.node .nw{font-size:10px;color:var(--ink-3);margin-top:1px;font-weight:700;}
+.node .pill{height:7px;border-radius:4px;margin:7px 2px 0;background:#EAE0D2;}
+.node.today{background:linear-gradient(180deg,#FFF0D6,#FFE4BC);box-shadow:0 0 0 2px var(--sunset) inset;}
+.node.today .nd{color:#C2522A;}
+.node.past{opacity:.5;}
+.node .today-dot{
+  position:absolute;top:-4px;left:50%;transform:translateX(-50%);
+  font-size:9px;background:var(--sunset);color:#fff;padding:1px 6px;border-radius:999px;font-weight:800;
+}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:11.5px;color:var(--ink-2);font-weight:700;}
+.legend i{display:inline-block;width:16px;height:7px;border-radius:4px;margin-right:5px;vertical-align:middle;}
+
+/* ============ FLIGHTS ============ */
+.fl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;}
+.fc{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:var(--shadow-s);overflow:hidden;transition:.28s;position:relative;
+}
+.fc:hover{transform:translateY(-5px);box-shadow:var(--shadow-m);}
+.fc .top{
+  padding:14px 16px;color:#fff;
+  background:linear-gradient(135deg,#FF9E4F,#FF7A5C);
+}
+.fc:nth-child(2) .top{background:linear-gradient(135deg,#37BFDC,#10B3A3);}
+.fc:nth-child(3) .top{background:linear-gradient(135deg,#37A474,#0F9E86);}
+.fc:nth-child(4) .top{background:linear-gradient(135deg,#9C7BE0,#7C57D8);}
+.fc .no{font-size:12px;font-weight:800;letter-spacing:1px;opacity:.92;}
+.fc .route{font-size:15.5px;font-weight:900;margin-top:3px;letter-spacing:-.2px;}
+.fc .body{padding:14px 16px 16px;}
+.fc .seg{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.fc .seg .tm{font-size:19px;font-weight:900;letter-spacing:-.5px;font-variant-numeric:tabular-nums;}
+.fc .seg .meta{font-size:11.5px;color:var(--ink-2);font-weight:700;}
+.fc .seg .arw{flex:1;height:2px;background:linear-gradient(90deg,var(--line),var(--sun),var(--line));border-radius:2px;position:relative;}
+.fc .seg .arw::after{content:"✈";position:absolute;right:0;top:-9px;font-size:11px;color:var(--sunset);}
+.fc .dur{font-size:11.5px;color:var(--ink-3);font-weight:700;margin-bottom:10px;}
+.fc .note{
+  font-size:12px;font-weight:700;color:#B4512C;background:#FFF3E2;
+  border:1px solid #FFE0BE;border-radius:12px;padding:7px 10px;margin-bottom:10px;line-height:1.5;
+}
+.fc .cd{
+  margin-top:10px;background:linear-gradient(135deg,#FFF9EF,#FFF1DE);
+  border:1px dashed #FFD9A8;border-radius:14px;padding:10px 12px;
+}
+.fc .cd .cl{font-size:11px;color:var(--ink-2);font-weight:800;margin-bottom:5px;letter-spacing:.3px;}
+.fc .cd .cv{font-size:15px;font-weight:900;color:#E8622F;font-variant-numeric:tabular-nums;letter-spacing:-.3px;}
+.fc .cd .cv.small{font-size:13px;}
+.fc .cd .cm{font-size:11px;color:var(--ink-3);font-weight:600;margin-top:3px;}
+.fc .done{background:#EAF8F3;border-color:#C8EFE3;color:#0E8A72;}
+.fc .done .cv{color:#0E8A72;}
+
+/* ============ ROUTE STRIP ============ */
+.tz-note{
+  background:linear-gradient(135deg,#FFFDF7,#FFF6E9);border:1px dashed #FFD9A8;
+  border-radius:14px;padding:10px 14px;margin-bottom:14px;
+  font-size:12.5px;font-weight:700;color:#7A5B44;line-height:1.7;
+}
+.tz-note b{color:#C2522A;}
+.tz-note span{display:inline-block;margin-left:6px;color:var(--ink-3);font-weight:600;}
+.route-strip{
+  display:flex;align-items:stretch;gap:0;margin-bottom:16px;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:14px 16px;box-shadow:var(--shadow-s);overflow-x:auto;
+}
+.rs-node{text-align:center;flex:0 0 auto;min-width:96px;padding:0 6px;}
+.rs-node .rs-em{font-size:22px;display:block;line-height:1.2;}
+.rs-node b{display:block;font-size:12.5px;font-weight:900;margin-top:3px;letter-spacing:-.2px;white-space:nowrap;}
+.rs-node small{display:block;font-size:10.5px;color:var(--ink-3);font-weight:700;margin-top:1px;white-space:nowrap;}
+.rs-line{
+  flex:1 1 60px;min-width:64px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;position:relative;
+}
+.rs-line .rs-track{width:100%;height:2px;background:linear-gradient(90deg,#FFD9A8,var(--sun),#FFD9A8);border-radius:2px;}
+.rs-line span{
+  font-size:10.5px;font-weight:800;color:#C2522A;background:#FFF3E2;
+  border:1px solid #FFE0BE;border-radius:999px;padding:2px 9px;margin-top:6px;white-space:nowrap;
+}
+
+/* ============ HOTELS ============ */
+.h-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;}
+.hc{
+  background:var(--card);border:1px solid var(--line);border-left:5px solid var(--sun);
+  border-radius:var(--r);padding:15px 17px;box-shadow:var(--shadow-s);transition:.26s;
+}
+.hc:hover{transform:translateY(-4px);box-shadow:var(--shadow-m);}
+.hc:nth-child(2){border-left-color:var(--palm);}
+.hc:nth-child(3){border-left-color:var(--lagoon);}
+.hc:nth-child(4){border-left-color:var(--lilac);}
+.hc:nth-child(5){border-left-color:var(--sunset);}
+.hc .hn{font-size:14.5px;font-weight:900;letter-spacing:-.2px;}
+.hc .hd{font-size:12.5px;font-weight:800;color:#C2522A;margin-top:5px;}
+.hc .ha{font-size:12px;color:var(--ink-2);margin-top:6px;line-height:1.55;}
+.hc .hconf{
+  display:inline-block;margin-top:8px;font-size:11.5px;font-weight:800;color:#0E8A72;
+  background:#EAF8F3;border:1px solid #C8EFE3;padding:3px 10px;border-radius:999px;
+}
+.hc .hnights{font-size:11.5px;color:var(--ink-3);font-weight:700;margin-top:4px;}
+
+/* ============ DAY CONTROLS ============ */
+.controls{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:12px 14px;box-shadow:var(--shadow-s);margin-bottom:16px;position:sticky;top:62px;z-index:40;
+}
+.chip{
+  border:1.5px solid var(--line);background:#FFFDF9;color:var(--ink-2);
+  font-size:12.5px;font-weight:800;padding:7px 14px;border-radius:999px;cursor:pointer;transition:.2s;
+}
+.chip:hover{border-color:var(--sun);color:var(--ink);}
+.chip.on{background:linear-gradient(135deg,#FF9E4F,#FF6B4A);border-color:transparent;color:#fff;box-shadow:0 3px 10px rgba(255,122,92,.35);}
+.search{
+  flex:1 1 180px;min-width:150px;border:1.5px solid var(--line);background:#FFFDF9;
+  border-radius:999px;padding:7px 15px;font-size:12.5px;font-family:inherit;color:var(--ink);outline:none;transition:.2s;
+}
+.search:focus{border-color:var(--ocean);box-shadow:0 0 0 3px rgba(16,179,163,.13);}
+.btn-ghost{
+  border:1.5px solid var(--line);background:#FFFDF9;color:var(--ink-2);font-size:12.5px;
+  font-weight:800;padding:7px 14px;border-radius:999px;cursor:pointer;transition:.2s;font-family:inherit;
+}
+.btn-ghost:hover{border-color:var(--ocean);color:var(--ocean);}
+
+/* ============ PHASE + DAY ============ */
+.phase{margin-top:26px;}
+.ph-head{display:flex;align-items:center;gap:10px;margin:0 0 12px;flex-wrap:wrap;}
+.ph-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.ph-name{font-size:15.5px;font-weight:900;letter-spacing:-.2px;}
+.ph-meta{font-size:12px;color:var(--ink-3);font-weight:700;}
+.ph-line{flex:1;height:2px;background:var(--line);border-radius:2px;min-width:20px;}
+
+.day{
+  background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);
+  margin-bottom:12px;box-shadow:var(--shadow-s);overflow:hidden;transition:.24s;
+  scroll-margin-top:140px;
+}
+.day:hover{box-shadow:var(--shadow-m);border-color:#F5DFC0;}
+.day.open{box-shadow:var(--shadow-m);border-color:var(--sun);}
+.day.key{border-color:#FFD79A;background:linear-gradient(180deg,#FFFCF5,#FFFFFF);}
+.day.fl{border-color:#FFCFC4;background:linear-gradient(180deg,#FFF8F5,#FFFFFF);}
+.day.today{box-shadow:0 0 0 2px var(--sunset),var(--shadow-m);}
+.d-head{display:grid;grid-template-columns:84px 1fr 40px;gap:14px;padding:14px 16px;cursor:pointer;align-items:center;}
+.d-date{text-align:center;border-right:1.5px dashed var(--line);padding-right:12px;}
+.d-date .dd{font-size:22px;font-weight:900;line-height:1;letter-spacing:-1px;}
+.d-date .dm{font-size:10.5px;color:var(--ink-3);font-weight:800;letter-spacing:1.5px;margin-top:3px;}
+.d-date .dw{font-size:11px;color:var(--ink-2);font-weight:700;margin-top:2px;}
+.d-main .tl{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px;}
+.d-title{font-size:14.5px;font-weight:900;letter-spacing:-.2px;}
+.tag{font-size:10.5px;font-weight:800;padding:2.5px 9px;border-radius:999px;color:#fff;}
+.tag.flight{background:linear-gradient(135deg,#FF7A5C,#F2515F);}
+.tag.tour{background:linear-gradient(135deg,#F2994A,#E2652A);}
+.tag.free{background:linear-gradient(135deg,#37A474,#0F9E86);}
+.tag.hotel{background:linear-gradient(135deg,#2FB6D4,#0E9E90);}
+.dno{font-size:10.5px;font-weight:900;color:#8A7A66;background:#F6EEE2;border-radius:6px;padding:2px 7px;letter-spacing:.5px;}
+.d-sub{font-size:12.5px;color:var(--ink-2);line-height:1.6;}
+.d-sub .hl{color:#C2522A;font-weight:800;}
+.spots{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;}
+.spot{font-size:11px;font-weight:700;color:var(--ink-2);background:#FFF6E9;border:1px solid #FFE9CE;padding:2px 9px;border-radius:8px;}
+.d-arrow{
+  width:30px;height:30px;border-radius:50%;background:#FFF6E9;border:1px solid #FFE9CE;
+  display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--sunset);
+  transition:transform .3s ease;font-weight:900;
+}
+.day.open .d-arrow{transform:rotate(180deg);background:linear-gradient(135deg,var(--sun),var(--sunset));color:#fff;border-color:transparent;}
+.d-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .38s cubic-bezier(.4,0,.2,1);}
+.d-body>div{overflow:hidden;}
+.d-inner{padding:0 16px 16px;border-top:1px dashed var(--line);margin-top:2px;padding-top:14px;}
+.blk{margin-bottom:12px;}
+.blk:last-child{margin-bottom:0;}
+.blk .bt{font-size:11.5px;font-weight:900;color:var(--ink-3);letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+.blk ul{margin:0;padding-left:17px;font-size:13px;line-height:1.75;color:var(--ink);}
+.blk li{margin-bottom:2px;}
+.blk li b{color:#C2522A;}
+.warn{
+  font-size:12.5px;font-weight:700;color:#B4512C;background:#FFF3E2;
+  border:1px solid #FFE0BE;border-radius:12px;padding:8px 11px;margin-top:6px;line-height:1.55;
+}
+.tip{
+  font-size:12.5px;color:#0E7A63;background:#EAF8F3;border:1px solid #C8EFE3;
+  border-radius:12px;padding:8px 11px;margin-top:6px;line-height:1.55;
+}
+.f-info{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  font-size:12.5px;font-weight:800;color:#C2522A;background:#FFF1E6;
+  border:1px solid #FFD7BE;border-radius:12px;padding:7px 11px;margin-top:6px;
+}
+.f-info .fcd{
+  font-size:11.5px;font-weight:800;color:#fff;background:linear-gradient(135deg,#FF9E4F,#FF6B4A);
+  border-radius:999px;padding:2px 10px;margin-left:auto;font-variant-numeric:tabular-nums;
+}
+.f-info .fcd.past{background:linear-gradient(135deg,#37A474,#0F9E86);}
+.empty{text-align:center;padding:34px;color:var(--ink-3);font-size:13px;font-weight:700;}
+
+/* ============ PACKING ============ */
+.pack{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;}
+.pk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px 17px;box-shadow:var(--shadow-s);}
+.pk h3{margin:0 0 10px;font-size:14px;font-weight:900;display:flex;align-items:center;gap:8px;}
+.pk h3 .em{font-size:17px;}
+.pl{list-style:none;margin:0;padding:0;}
+.pl li{
+  display:flex;align-items:flex-start;gap:9px;padding:6px 0;font-size:13px;
+  cursor:pointer;color:var(--ink);border-bottom:1px dashed #F7EFE4;transition:.15s;
+}
+.pl li:last-child{border-bottom:none;}
+.pl li:hover{color:#C2522A;}
+.pk-box{
+  width:17px;height:17px;border-radius:5px;border:2px solid #E4D5C2;flex-shrink:0;margin-top:2px;
+  display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;transition:.18s;
+}
+.pl li.done .pk-box{background:linear-gradient(135deg,var(--palm),#0F9E86);border-color:transparent;}
+.pl li.done span{text-decoration:line-through;color:var(--ink-3);}
+.pk-bar{margin-top:14px;}
+.pk-bar .pt{display:flex;justify-content:space-between;font-size:12px;font-weight:800;color:var(--ink-2);margin-bottom:6px;}
+.pk-bar .ptrack{height:9px;border-radius:6px;background:#F3E8DA;overflow:hidden;}
+.pk-bar .pfill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--sun),var(--palm));transition:width .4s ease;}
+.reset-btn{
+  margin-top:12px;border:none;background:#FFF6E9;border:1px solid #FFE9CE;color:var(--ink-2);
+  font-size:12px;font-weight:800;padding:7px 14px;border-radius:999px;cursor:pointer;font-family:inherit;transition:.2s;
+}
+.reset-btn:hover{background:#FFEED9;color:#C2522A;}
+
+/* ============ INFO ============ */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;}
+.ic{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;box-shadow:var(--shadow-s);transition:.24s;}
+.ic:hover{transform:translateY(-3px);box-shadow:var(--shadow-m);}
+.ic h3{margin:0 0 10px;font-size:14px;font-weight:900;display:flex;align-items:center;gap:8px;}
+.ic .row{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;padding:5px 0;border-bottom:1px dashed #F7EFE4;}
+.ic .row:last-child{border-bottom:none;}
+.ic .row .k{color:var(--ink-3);font-weight:700;flex-shrink:0;}
+.ic .row .v{color:var(--ink);font-weight:700;text-align:right;}
+.wx{display:flex;gap:10px;align-items:center;margin-bottom:10px;padding:10px;background:#FFF9EF;border-radius:14px;}
+.wx .wxi{font-size:26px;}
+.wx .wxn{font-size:13px;font-weight:900;}
+.wx .wxd{font-size:11.5px;color:var(--ink-2);font-weight:700;}
+.disclaimer{margin-top:14px;font-size:11.5px;color:var(--ink-3);font-weight:600;background:#FFFDF8;border:1px dashed var(--line);border-radius:14px;padding:10px 14px;}
+
+/* ============ FOOTER ============ */
+footer{margin:56px 0 40px;text-align:center;color:var(--ink-3);font-size:12px;font-weight:600;line-height:1.9;}
+footer .fline{width:60px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--sun),var(--coral));margin:0 auto 14px;}
+
+/* ============ TOP BTN ============ */
+.topbtn{
+  position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(135deg,var(--sunset),var(--coral));color:#fff;border:none;
+  font-size:18px;cursor:pointer;box-shadow:var(--shadow-m);z-index:80;
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.topbtn.show{opacity:1;pointer-events:auto;}
+.topbtn:hover{transform:translateY(-3px);}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease;}
+.rv.in{opacity:1;transform:none;}
+
+@media(max-width:640px){
+  .hero-in{padding:28px 20px 24px;}
+  .hero .sun{width:64px;right:16px;top:16px;}
+  .d-head{grid-template-columns:64px 1fr 30px;gap:10px;padding:12px;}
+  .d-date .dd{font-size:18px;}
+  .controls{top:56px;}
+  html{scroll-padding-top:120px;}
+  .cd-units{gap:7px;}
+  .sec-h h2{font-size:19px;}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+  .rv{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ==================== HERO ==================== -->
+  <div class="hero">
+    <!-- palm leaf -->
+    <svg class="leaf l1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#2E7D5B">
+        <path d="M100 190 C100 120 100 60 100 10 C88 40 70 62 44 74 C64 86 84 92 100 92 Z"/>
+        <path d="M100 190 C100 130 100 70 100 18 C114 46 132 66 158 78 C138 88 118 92 100 92 Z" opacity=".85"/>
+        <path d="M100 150 C74 140 50 118 34 88 C58 96 82 104 100 108 Z"/>
+        <path d="M100 150 C126 140 150 118 166 88 C142 96 118 104 100 108 Z" opacity=".85"/>
+        <path d="M96 96 C74 82 56 58 48 30 C70 44 88 62 98 82 Z" opacity=".7"/>
+        <path d="M104 96 C126 82 144 58 152 30 C130 44 112 62 102 82 Z" opacity=".7"/>
+      </g>
+    </svg>
+    <svg class="leaf l2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g fill="#B4562E">
+        <path d="M100 190 C100 120 100 60 100 10 C88 40 70 62 44 74 C64 86 84 92 100 92 Z"/>
+        <path d="M100 190 C100 130 100 70 100 18 C114 46 132 66 158 78 C138 88 118 92 100 92 Z" opacity=".8"/>
+        <path d="M96 96 C74 82 56 58 48 30 C70 44 88 62 98 82 Z" opacity=".6"/>
+        <path d="M104 96 C126 82 144 58 152 30 C130 44 112 62 102 82 Z" opacity=".6"/>
+      </g>
+    </svg>
+    <svg class="sun" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="24" fill="#FFD86B"/>
+      <g stroke="#FFB13D" stroke-width="4" stroke-linecap="round">
+        <line x1="50" y1="10" x2="50" y2="20"/><line x1="50" y1="80" x2="50" y2="90"/>
+        <line x1="10" y1="50" x2="20" y2="50"/><line x1="80" y1="50" x2="90" y2="50"/>
+        <line x1="22" y1="22" x2="29" y2="29"/><line x1="71" y1="71" x2="78" y2="78"/>
+        <line x1="78" y1="22" x2="71" y2="29"/><line x1="29" y1="71" x2="22" y2="78"/>
+      </g>
+    </svg>
+
+    <div class="hero-in">
+      <div class="badge-row">
+        <span class="badge">🌴 泰国 · 曼谷</span>
+        <span class="badge">🏝️ 印尼 · 巴厘岛</span>
+        <span class="badge">📅 17 天 16 晚</span>
+        <span class="badge">✈️ 4 段航班</span>
+      </div>
+      <h1>曼谷 &amp; 巴厘岛 · 热岛计划</h1>
+      <p class="sub">2026年9月23日（周三）— 2026年10月9日（周五）｜ 北京往返 · 5 次入住 · 全行程已确认</p>
+
+      <div class="cd-panel">
+        <div class="cd-head">
+          <span class="cd-label" id="cdLabel">⏳ 距离出发航班</span>
+          <span class="cd-target" id="cdTarget"></span>
+        </div>
+        <div class="cd-units" id="cdUnits">
+          <div class="cd-u"><div class="n" id="cdD">--</div><div class="l">天</div></div>
+          <div class="cd-u"><div class="n" id="cdH">--</div><div class="l">时</div></div>
+          <div class="cd-u"><div class="n" id="cdM">--</div><div class="l">分</div></div>
+          <div class="cd-u"><div class="n" id="cdS">--</div><div class="l">秒</div></div>
+        </div>
+        <div class="cd-note" id="cdNote">
+          下一段：<b id="cdNextName">—</b><span id="cdNextTime"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== NAV ==================== -->
+  <nav class="nav" id="nav">
+    <a href="#overview" class="on">🏠 总览</a>
+    <a href="#flights">✈️ 航班</a>
+    <a href="#hotels">🏨 酒店</a>
+    <a href="#days">📅 逐日行程</a>
+    <a href="#packing">🎒 打包清单</a>
+    <a href="#info">💡 实用锦囊</a>
+  </nav>
+
+  <!-- ==================== OVERVIEW ==================== -->
+  <section id="overview">
+    <div class="sec-h">
+      <span class="bar"></span>
+      <h2>行程总览</h2>
+      <span class="desc">一眼看清 17 天的骨架</span>
+    </div>
+
+    <div class="stats rv">
+      <div class="stat" style="color:var(--sunset);"><div class="n" data-count="17">0</div><div class="t">总天数</div><div class="s">9/23 — 10/9</div></div>
+      <div class="stat" style="color:var(--ocean);"><div class="n" data-count="2">0</div><div class="t">国家 / 城市</div><div class="s">曼谷 + 巴厘岛</div></div>
+      <div class="stat" style="color:var(--coral);"><div class="n" data-count="4">0</div><div class="t">航班段数</div><div class="s">含 2 段国际 + 2 段往返岛</div></div>
+      <div class="stat" style="color:var(--palm);"><div class="n" data-count="5">0</div><div class="t">入住次数</div><div class="s">共 16 晚</div></div>
+      <div class="stat" style="color:var(--lagoon);"><div class="n" data-count="8">0</div><div class="t">巴厘岛停留</div><div class="s">9/27 — 10/5 ｜ 8 晚</div></div>
+      <div class="stat" style="color:var(--lilac);"><div class="n" data-count="8">0</div><div class="t">曼谷停留</div><div class="s">前后各 4 晚</div></div>
+    </div>
+
+    <div class="rail-card rv">
+      <div class="rail-top">
+        <span class="rt">🗺️ 17 天时间轴 · 点击任意日期跳转</span>
+        <span class="rh">色块 = 所处阶段</span>
+      </div>
+      <div class="prog">
+        <div class="pt"><span>✈️ 旅程进度</span><span id="progTxt">—</span></div>
+        <div class="ptrack"><div class="pfill" id="progFill" style="width:0%;"></div><div class="pmark" id="progMark" style="left:0%;"></div></div>
+      </div>
+      <div class="rail-scroll"><div class="rail" id="rail"></div></div>
+      <div class="legend">
+        <span><i style="background:#FF9E4F;"></i>曼谷第一程</span>
+        <span><i style="background:#37A474;"></i>乌布</span>
+        <span><i style="background:#37BFDC;"></i>库塔 Beachwalk</span>
+        <span><i style="background:#9C7BE0;"></i>库塔日落大道</span>
+        <span><i style="background:#FF7A5C;"></i>曼谷第二程</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FLIGHTS ==================== -->
+  <section id="flights">
+    <div class="sec-h">
+      <span class="bar"></span>
+      <h2>✈️ 航班信息（4 段）</h2>
+      <span class="desc">实时倒计时 · 起飞前 2 小时建议抵达机场</span>
+    </div>
+    <div class="route-strip rv">
+      <div class="rs-node"><span class="rs-em">🇨🇳</span><b>北京 PEK</b><small>首都 T3</small></div>
+      <div class="rs-line"><div class="rs-track"></div><span>CA979 ✈ 5h15m</span></div>
+      <div class="rs-node"><span class="rs-em">🇹🇭</span><b>曼谷 BKK</b><small>沙吞 · 4 晚</small></div>
+      <div class="rs-line"><div class="rs-track"></div><span>SL258 ✈ 4h20m →</span></div>
+      <div class="rs-node"><span class="rs-em">🇮🇩</span><b>巴厘岛 DPS</b><small>乌布 · 库塔 · 8 晚</small></div>
+      <div class="rs-line"><div class="rs-track"></div><span>← SL259 ✈ 4h25m</span></div>
+      <div class="rs-node"><span class="rs-em">🇹🇭</span><b>曼谷 DMK</b><small>沙吞 · 4 晚</small></div>
+      <div class="rs-line"><div class="rs-track"></div><span>CA960 ✈ 4h50m</span></div>
+      <div class="rs-node"><span class="rs-em">🇨🇳</span><b>北京 PEK</b><small>首都 T3</small></div>
+    </div>
+    <div class="tz-note rv">
+      🕐 时区提醒：北京 <b>UTC+8</b> ｜ 曼谷 <b>UTC+7</b>（比北京慢 1 小时）｜ 巴厘岛 <b>UTC+8</b>（与北京一致）
+      <span>所有起飞 / 抵达时间均为<b>当地时刻</b></span>
+    </div>
+    <div class="fl-grid rv" id="flGrid"></div>
+  </section>
+
+  <!-- ==================== HOTELS ==================== -->
+  <section id="hotels">
+    <div class="sec-h">
+      <span class="bar"></span>
+      <h2>🏨 酒店住宿（5 次入住 · 16 晚）</h2>
+      <span class="desc">含确认编号，入住时直接出示</span>
+    </div>
+    <div class="h-grid rv" id="hGrid"></div>
+  </section>
+
+  <!-- ==================== DAYS ==================== -->
+  <section id="days">
+    <div class="sec-h">
+      <span class="bar"></span>
+      <h2>📅 逐日行程</h2>
+      <span class="desc">点击卡片展开完整安排 · 支持筛选与搜索</span>
+    </div>
+
+    <div class="controls">
+      <button class="chip on" data-f="all">全部</button>
+      <button class="chip" data-f="flight">✈️ 航班日</button>
+      <button class="chip" data-f="tour">⭐ 重点日</button>
+      <button class="chip" data-f="hotel">🏨 转场入住</button>
+      <button class="chip" data-f="free">🌴 自由 / 购物</button>
+      <input class="search" id="search" placeholder="🔍 搜索景点、航班号、城市…">
+      <button class="btn-ghost" id="jumpNow">📍 跳到最近行程日</button>
+      <button class="btn-ghost" id="toggleAll">展开全部</button>
+    </div>
+
+    <div id="dayList"></div>
+    <div class="empty" id="emptyBox" style="display:none;">没有匹配的行程，换个关键词试试 🌺</div>
+  </section>
+
+  <!-- ==================== PACKING ==================== -->
+  <section id="packing">
+    <div class="sec-h">
+      <span class="bar"></span>
+      <h2>🎒 打包清单</h2>
+      <span class="desc">点击勾选 · 自动保存在本地</span>
+    </div>
+    <div class="pack rv" id="packGrid"></div>
+    <div class="pk rv" style="margin-top:14px;">
+      <div class="pk-bar">
+        <div class="pt"><span>打包进度</span><span id="pkPct">0%</span></div>
+        <div class="ptrack"><div class="pfill" id="pkFill" style="width:0%;"></div></div>
+      </div>
+      <button class="reset-btn" id="pkReset">↺ 重置清单</button>
+    </div>
+  </section>
+
+  <!-- ==================== INFO ==================== -->
+  <section id="info">
+    <div class="sec-h">
+      <span class="bar"></span>
+      <h2>💡 实用锦囊</h2>
+      <span class="desc">天气 / 货币 / 交通 / 签证 · 出发前扫一眼</span>
+    </div>
+    <div class="info-grid rv" id="infoGrid"></div>
+    <div class="disclaimer">
+      ⚠️ 签证、汇率、交通与开放时间等政策可能随时调整，出发前请以官方渠道（航司、使领馆、景区官网）的最新公告为准。
+    </div>
+  </section>
+
+  <footer>
+    <div class="fline"></div>
+    🌴 曼谷 &amp; 巴厘岛 17 天热岛计划 · 2026.09.23 — 2026.10.09<br>
+    愿你每段航班都准点，每个日落都刚好 🌅
+  </footer>
+</div>
+
+<button class="topbtn" id="topBtn">↑</button>
+
+<script>
+/* ============================================================
+   数据区：全部沿用原始行程信息，未做任何时间/日期改动
+   ============================================================ */
+
+const FLIGHTS = [
+  {
+    no:'CA979', from:'北京首都', to:'曼谷素万那普', cls:'去程 · 国际',
+    depLocal:'9/23（周三）19:55', arrLocal:'9/24（周四）00:10',
+    dur:'5h15m', extra:'北京首都 T3 出发',
+    depISO:'2026-09-23T19:55:00+08:00', arrISO:'2026-09-24T00:10:00+07:00',
+    note:'', color:1
+  },
+  {
+    no:'SL258', from:'曼谷（廊曼 DMK）', to:'巴厘岛伍拉·莱', cls:'去程 · 曼谷→巴厘',
+    depLocal:'9/27（周日）06:50', arrLocal:'9/27（周日）12:10',
+    dur:'4h20m', extra:'廊曼机场 T1 出发',
+    depISO:'2026-09-27T06:50:00+07:00', arrISO:'2026-09-27T12:10:00+08:00',
+    note:'⚠️ 起飞机场是廊曼(DMK)，非素万那普，凌晨 4:00-4:15 需从沙吞出发', color:2
+  },
+  {
+    no:'SL259', from:'巴厘岛伍拉·莱', to:'曼谷（廊曼 DMK）', cls:'回程 · 巴厘→曼谷',
+    depLocal:'10/5（周一）13:25', arrLocal:'10/5（周一）16:50',
+    dur:'4h25m', extra:'到达廊曼机场 T1',
+    depISO:'2026-10-05T13:25:00+08:00', arrISO:'2026-10-05T16:50:00+07:00',
+    note:'⚠️ 落地正值傍晚高峰，回沙吞酒店预留 1-1.5 小时', color:3
+  },
+  {
+    no:'CA960', from:'曼谷素万那普', to:'北京首都', cls:'回程 · 国际',
+    depLocal:'10/9（周五）19:35', arrLocal:'10/10（周六）01:25',
+    dur:'4h50m', extra:'抵达北京首都 T3',
+    depISO:'2026-10-09T19:35:00+07:00', arrISO:'2026-10-10T01:25:00+08:00',
+    note:'⚠️ 建议 16:00 前从沙吞出发，避开晚高峰', color:4
+  }
+];
+
+const HOTELS = [
+  {n:'曼谷沙吞 JC 凯文酒店', d:'9/23 → 9/27（4 晚）', a:'36 Naradhiwas Rajanagarindra Rd, Yannawa, 曼谷', c:''},
+  {n:'巴厘岛乌布源宿威斯汀酒店（Element Bali Ubud）', d:'9/27 → 9/29（2 晚）', a:'Jl. Raya Andong No.88, Petulu, Ubud, 巴厘岛', c:''},
+  {n:'库塔 Beachwalk 雅乐轩酒店（Aloft Bali Kuta）', d:'9/29 → 10/2（3 晚）', a:'Aloft Bali Kuta at Beachwalk, 巴厘岛', c:'确认编号：87969974'},
+  {n:'库塔日落大道万枫酒店（Fairfield by Marriott Bali Kuta Sunset Road）', d:'10/2 → 10/5（3 晚）', a:'Fairfield by Marriott Bali Kuta Sunset Road, 巴厘岛', c:'确认编号：87983248'},
+  {n:'曼谷沙吞 JC 凯文酒店', d:'10/5 → 10/9（4 晚）', a:'36 Naradhiwas Rajanagarindra Rd, Yannawa, 曼谷', c:''}
+];
+
+const PHASES = [
+  {name:'曼谷第一程 · 沙吞 JC 凯文酒店', meta:'9/23 — 9/27 ｜ 4 晚', color:'#FF9E4F'},
+  {name:'巴厘岛 · 乌布 Element Bali Ubud', meta:'9/27 — 9/29 ｜ 2 晚', color:'#37A474'},
+  {name:'巴厘岛 · 库塔 Beachwalk Aloft', meta:'9/29 — 10/2 ｜ 3 晚', color:'#37BFDC'},
+  {name:'巴厘岛 · 日落大道 万枫酒店', meta:'10/2 — 10/5 ｜ 3 晚', color:'#9C7BE0'},
+  {name:'曼谷第二程 · 沙吞 JC 凯文酒店', meta:'10/5 — 10/9 ｜ 4 晚', color:'#FF7A5C'}
+];
+
+/* 逐日行程（原始信息完整保留，另补充实用贴士） */
+const DAYS = [
+  {
+    p:0, d:'9/23', m:'SEP', w:'周三', kind:'flight', tag:'航班日', tagCls:'flight',
+    title:'北京 → 曼谷，夜航抵达',
+    spots:['首都 T3','素万那普 BKK'],
+    summary:['落地打车约 <b>40-50 分钟</b> 到沙吞 JC 凯文酒店，直接入住休息。'],
+    flight:{no:'CA979', txt:'北京 19:55 起飞 → 曼谷 00:10 抵达（次日）', iso:'2026-09-23T19:55:00+08:00'},
+    tips:['提前 2 小时到达首都 T3，国际航班建议 17:55 前完成值机。','机上备好颈枕、眼罩，落地即可精神一点。','提前准备好回程机票行程单与酒店订单备查。']
+  },
+  {
+    p:0, d:'9/24', m:'SEP', w:'周四', kind:'tour', tag:'核心景点', tagCls:'tour',
+    title:'曼谷老城水路一日游',
+    spots:['大皇宫','玉佛寺','卧佛寺','黎明寺'],
+    summary:[
+      '<b>大皇宫 / 玉佛寺</b> → <b>卧佛寺</b>',
+      '湄南河游船到对岸 <b>黎明寺（Wat Arun）</b>',
+      '傍晚河边散步，河景餐厅晚餐'
+    ],
+    tips:['大皇宫需着长裤 / 长裙并遮住肩膀，门口可租纱笼。','建议 8:30 前抵达，可避开人潮与正午高温。','去黎明寺在 Tha Tien 码头坐摆渡船，约 3-5 分钟。']
+  },
+  {
+    p:0, d:'9/25', m:'SEP', w:'周五', kind:'free', tag:'购物日', tagCls:'free',
+    title:'市区文化 + 购物',
+    spots:['Jim Thompson 故居','Siam Paragon','CentralWorld','隆比尼公园','Asiatique'],
+    summary:[
+      '上午 <b>Jim Thompson 故居</b>，中午暹罗商圈（Siam Paragon / CentralWorld）',
+      '下午隆比尼公园，晚上 Asiatique 河滨夜市'
+    ],
+    tips:['BTS 暹罗站（Siam）换乘最方便，两条线交汇。','商场消费满额记得索取退税单（PP10），离境时办理。','Asiatique 建议傍晚 17:00 后前往，顺带坐摩天轮。']
+  },
+  {
+    p:0, d:'9/26', m:'SEP', w:'周六', kind:'tour', tag:'全天重点', tagCls:'tour',
+    title:'恰图恰周末市场',
+    spots:['Chatuchak','泰式按摩'],
+    summary:[
+      '<b>恰图恰周末市场</b>仅周五晚-周日营业，本次唯一机会',
+      '下午泰式按摩，整理行李'
+    ],
+    warn:'⚠️ 次日凌晨要早起赶飞机，今晚提早休息。',
+    tips:['MRT Kamphaeng Phet 站 / BTS Mo Chit 站直达。','带足现金，砍价习惯从五折起谈。','市场巨大，先扫一遍再回头买，别一见钟情就下手。']
+  },
+  {
+    p:0, d:'9/27', m:'SEP', w:'周日', kind:'flight', tag:'航班日', tagCls:'flight',
+    title:'凌晨飞往巴厘岛',
+    spots:['廊曼 DMK T1'],
+    summary:['清晨航班，直飞巴厘岛。'],
+    flight:{no:'SL258', txt:'廊曼 06:50 起飞 → 巴厘岛 12:10 抵达', iso:'2026-09-27T06:50:00+07:00'},
+    warn:'⚠️ 起飞机场是廊曼（DMK）非素万那普，凌晨 4:00-4:15 需出发。',
+    tips:['前一晚预约好送机车，别指望临时叫车。','廊曼 T1 出发，进航站楼前确认航站楼别走错。']
+  },
+
+  {
+    p:1, d:'9/27', m:'SEP', w:'周日', kind:'hotel', tag:'入住', tagCls:'hotel',
+    title:'抵达巴厘岛，转场乌布',
+    spots:['乌布皇宫','乌布传统市场','巴龙舞 / 凯卡克舞'],
+    summary:[
+      '包车前往乌布（约 <b>1-1.5 小时</b>），入住后逛 <b>乌布皇宫</b> 与传统市场',
+      '晚上观看巴龙舞 / 凯卡克舞表演'
+    ],
+    tips:['落地先办入境与取行李，机场官方出租车 / Grab 接单更省心。','凯卡克舞在乌布皇宫与多处寺庙都有场，建议当晚提前订票。']
+  },
+  {
+    p:1, d:'9/28', m:'SEP', w:'周一', kind:'tour', tag:'全天重点', tagCls:'tour',
+    title:'乌布经典包车一日游',
+    spots:['德格拉朗梯田','圣泉寺','乌布猴林公园'],
+    summary:['<b>德格拉朗梯田</b> → <b>圣泉寺</b> → <b>乌布猴林公园</b>'],
+    tip:'💡 全天按小时包车，比打车更划算。',
+    tips:['圣泉寺需围纱笼，门口可租。','猴林别手持塑料袋、墨镜，猴子会直接抢。','梯田建议上午去，光线好、人也少。']
+  },
+
+  {
+    p:2, d:'9/29', m:'SEP', w:'周二', kind:'hotel', tag:'入住', tagCls:'hotel',
+    title:'转场库塔 Beachwalk',
+    spots:['Beachwalk 购物中心','库塔海滩'],
+    summary:[
+      '包车南下库塔（约 1-1.5 小时），入住 Aloft Bali Kuta',
+      '步行即达 <b>Beachwalk 购物中心</b>，傍晚库塔海滩日落'
+    ],
+    tips:['Beachwalk 就在酒店楼下，买沙滩装备、换汇都很方便。','库塔日落约 18:00 前后，提前 20 分钟占个好位置。']
+  },
+  {
+    p:2, d:'9/30', m:'SEP', w:'周三', kind:'tour', tag:'全天重点', tagCls:'tour',
+    title:'乌鲁瓦图 + 金巴兰日落海鲜',
+    spots:['乌鲁瓦图寺','凯卡克舞','金巴兰海滩'],
+    summary:[
+      '<b>乌鲁瓦图寺</b>悬崖景观 + 凯卡克舞',
+      '傍晚 <b>金巴兰海滩</b>沙滩海鲜晚餐看日落'
+    ],
+    tips:['凯卡克舞傍晚场通常 18:00 开始，日落背景下最出片。','寺内猴子很多，手机与帽子要看牢。','金巴兰海鲜选明码标价的摊位，先确认总价再落座。']
+  },
+  {
+    p:2, d:'10/1', m:'OCT', w:'周四', kind:'tour', tag:'全天重点', tagCls:'tour',
+    title:'Nusa Penida 跳岛一日游',
+    spots:['沙努尔码头','Kelingking 海滩','破碎海滩','天使浴池','水晶湾'],
+    summary:[
+      '包车至沙努尔码头（约 40 分钟）→ 快艇登岛（约 30-45 分钟）',
+      '岛上包车游览 <b>Kelingking 海滩、破碎海滩、天使浴池、水晶湾</b>'
+    ],
+    warn:'⚠️ 建议提前一天订好船票与岛上包车。',
+    tips:['Kelingking 下到沙滩往返约 40 分钟且陡，穿运动鞋。','晕船体质提前吃晕船药，快艇海况起伏明显。','岛上路况一般，包车带司机最省时间。']
+  },
+
+  {
+    p:3, d:'10/2', m:'OCT', w:'周五', kind:'hotel', tag:'入住', tagCls:'hotel',
+    title:'转场日落大道 + 水明漾',
+    spots:['万枫酒店','水明漾 Seminyak','日落酒吧'],
+    summary:[
+      '短途转移（约 15-20 分钟）入住万枫酒店',
+      '下午逛 <b>水明漾（Seminyak）</b>，晚上日落酒吧'
+    ],
+    tips:['车程很短，上午从容收拾即可。','水明漾的 Potato Head、La Plancha 都是经典日落位，建议提前订座。']
+  },
+  {
+    p:3, d:'10/3', m:'OCT', w:'周六', kind:'tour', tag:'二选一', tagCls:'tour',
+    title:'Canggu 冲浪 / 塔纳罗特海神庙',
+    spots:['Canggu','塔纳罗特海神庙'],
+    summary:['<b>Canggu</b> 冲浪海滩、稻田咖啡馆，或 <b>塔纳罗特海神庙</b> 日落，可各半天。'],
+    tips:['冲浪体验课约 2 小时，零基础也能站板。','海神庙日落约 17:30-18:15，涨潮时不可走到庙下。','上午 Canggu、下午海神庙是最顺的路线。']
+  },
+  {
+    p:3, d:'10/4', m:'OCT', w:'周日', kind:'free', tag:'自由活动', tagCls:'free',
+    title:'机动自由日',
+    spots:['GWK 文化公园','水疗 SPA','补购物'],
+    summary:['GWK 文化公园 / 水疗 / 补购物，收拾行李。'],
+    tips:['次日 13:25 航班，今晚务必把行李收好。','想补伴手礼可去库塔的 Krisna 或 Discovery Mall。']
+  },
+  {
+    p:3, d:'10/5', m:'OCT', w:'周一', kind:'flight', tag:'航班日', tagCls:'flight',
+    title:'飞回曼谷',
+    spots:['伍拉·莱 DPS','廊曼 DMK'],
+    summary:['午间航班返回曼谷，晚高峰前抵达。'],
+    flight:{no:'SL259', txt:'巴厘岛 13:25 起飞 → 廊曼 16:50 抵达', iso:'2026-10-05T13:25:00+08:00'},
+    warn:'⚠️ 落地傍晚高峰，回沙吞预留 1-1.5 小时车程。',
+    tips:['国际航班建议起飞前 2 小时到机场，11:25 前抵达。','巴厘岛机场离境时需缴离境税（通常已含在机票内）。']
+  },
+
+  {
+    p:4, d:'10/6', m:'OCT', w:'周二', kind:'free', tag:'购物日', tagCls:'free',
+    title:'曼谷购物日',
+    spots:['EmQuartier','Terminal 21','水门市场','天台酒吧'],
+    summary:['EmQuartier / Terminal21 或水门市场，晚上天台酒吧看夜景。'],
+    tips:['BTS Asok 站可达 Terminal 21，Phrom Phong 站是 EmQuartier。','天台酒吧有 dress code，别穿拖鞋短裤。']
+  },
+  {
+    p:4, d:'10/7', m:'OCT', w:'周三', kind:'tour', tag:'全天重点', tagCls:'tour',
+    title:'曼谷周边一日游',
+    spots:['大城府 Ayutthaya','美功铁道市场','丹嫩沙多水上市场'],
+    summary:['<b>大城府（Ayutthaya）</b> 或 <b>美功铁道市场 + 丹嫩沙多水上市场</b>，建议包一日车往返。'],
+    tips:['大城府寺群园区大，可租自行车或包车跟司机。','美功火车时刻每日变动，出发当天务必再确认一次。']
+  },
+  {
+    p:4, d:'10/8', m:'OCT', w:'周四', kind:'free', tag:'自由活动', tagCls:'free',
+    title:'自由活动 + 打包',
+    spots:['按摩 SPA','补充购物','机场退税'],
+    summary:['补充购物、按摩 SPA，整理行李。'],
+    tips:['泰国退税：单店单日满 2000 泰铢可开 PP10 单，离境时在机场退税柜台办理。','把退税商品放随身，机场可能要求查验。']
+  },
+  {
+    p:4, d:'10/9', m:'OCT', w:'周五', kind:'flight', tag:'航班日', tagCls:'flight',
+    title:'返回北京',
+    spots:['素万那普 BKK','首都 T3'],
+    summary:['晚班机返京，次日凌晨落地。'],
+    flight:{no:'CA960', txt:'曼谷 19:35 起飞 → 北京次日 01:25 抵达', iso:'2026-10-09T19:35:00+07:00'},
+    warn:'⚠️ 建议 16:00 前从沙吞出发，避开晚高峰。',
+    tips:['国际航班建议提前 3 小时到素万那普，16:35 前完成值机。','退税柜台在出发大厅安检前，先退税再托运。']
+  }
+];
+
+/* 打包清单 */
+const PACK = [
+  {e:'🛂', t:'证件与财物', items:['护照（有效期 6 个月以上）+ 复印件','身份证','机票行程单 / 电子票号','酒店确认单（含 87969974、87983248）','信用卡 + 少量现金','旅行保险保单']},
+  {e:'👕', t:'衣物', items:['夏装 5-7 套','薄外套（机舱与寺庙御寒）','长裤 / 长裙（寺庙着装）','泳衣 2 套','沙滩鞋 + 拖鞋','遮阳帽 / 墨镜','运动鞋（Penida 岛必备）']},
+  {e:'🔌', t:'电子', items:['手机 + 充电器','充电宝（随身，不托运）','转换插头（印尼欧标两圆）','相机 / 运动相机','耳机','eSIM 或当地电话卡']},
+  {e:'🧴', t:'洗护与药品', items:['高倍防晒霜（建议 reef safe）','晒后修复 / 芦荟胶','驱蚊液','肠胃药 / 晕船药','创可贴 + 常用感冒药','个人洗漱用品']},
+  {e:'🏝️', t:'海岛装备', items:['防水手机袋','速干浴巾','浮潜面镜（可选）','沙滩袋','保温水壶','折叠雨衣（雨季必备）']}
+];
+
+/* 实用锦囊 */
+const INFO = [
+  {e:'🌤️', t:'天气与穿着', type:'wx', rows:[
+    {k:'曼谷 9-10 月', v:'约 26-33°C，雨季末，午后阵雨'},
+    {k:'巴厘岛 9-10 月', v:'约 24-31°C，旱季末，湿热少雨'},
+    {k:'建议穿着', v:'速干夏装 + 薄外套，带折叠伞'},
+    {k:'寺庙着装', v:'遮肩遮膝，门口可租纱笼'}
+  ]},
+  {e:'💱', t:'货币与支付', rows:[
+    {k:'泰国', v:'泰铢 THB ｜ 1 元 ≈ 5 泰铢（仅供参考）'},
+    {k:'印尼', v:'印尼盾 IDR ｜ 1 元 ≈ 2,300 盾（仅供参考）'},
+    {k:'支付方式', v:'商场刷卡 / 扫码；夜市摊位需现金'},
+    {k:'换汇', v:'机场少换，市区正规兑换点更划算'}
+  ]},
+  {e:'🚗', t:'交通方式', rows:[
+    {k:'曼谷', v:'BTS / MRT 最稳，打车用 Grab'},
+    {k:'巴厘岛', v:'包车按小时最划算，Grab / Gojek 短途'},
+    {k:'曼谷出租', v:'坚持打表（Meter）或直接用 Grab'},
+    {k:'跳岛', v:'沙努尔码头快艇，提前一天订票'}
+  ]},
+  {e:'📶', t:'通讯与网络', rows:[
+    {k:'泰国', v:'AIS / TrueMove 当地卡或 eSIM'},
+    {k:'印尼', v:'Telkomsel 信号覆盖最好'},
+    {k:'建议', v:'出发前开通 eSIM，落地即用'},
+    {k:'插座', v:'泰国 220V 通用；印尼 220V 欧标两圆'}
+  ]},
+  {e:'🆘', t:'紧急与安全', rows:[
+    {k:'泰国旅游警察', v:'1155（中文可接通）'},
+    {k:'印尼报警', v:'110 ｜ 急救 118'},
+    {k:'中国领事保护', v:'+86-10-12308'},
+    {k:'保险', v:'保存保单号与 24h 救援电话'}
+  ]},
+  {e:'🙏', t:'礼仪与小费', rows:[
+    {k:'泰国小费', v:'按摩 50-100 铢，餐厅可不给'},
+    {k:'印尼小费', v:'包车司机 5-10 万盾 / 天'},
+    {k:'寺庙礼仪', v:'不用脚指人或物，女性生理期不进寺'},
+    {k:'砍价', v:'夜市从五折起谈，笑着走开最好用'}
+  ]}
+];
+
+/* ============================================================
+   渲染逻辑
+   ============================================================ */
+const $ = s => document.querySelector(s);
+const el = (t,c,h) => { const n=document.createElement(t); if(c) n.className=c; if(h!=null) n.innerHTML=h; return n; };
+const pad = n => String(n).padStart(2,'0');
+
+/* 取 ISO 字符串里的时区偏移（分钟），用于按"当地时间"显示 */
+function offsetOf(iso){
+  const m = iso.match(/([+-])(\d{2}):(\d{2})$/);
+  if(!m) return -new Date(iso).getTimezoneOffset();
+  const s = m[1]==='+' ? 1 : -1;
+  return s * (parseInt(m[2],10)*60 + parseInt(m[3],10));
+}
+/* 把时间戳按指定偏移格式化为"当地"月/日 时:分 */
+function fmtAt(epoch, offMin){
+  const d = new Date(epoch + offMin*60000);
+  return `${d.getUTCMonth()+1}/${d.getUTCDate()} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`;
+}
+/* 行程第几天（以 9/23 为 D1） */
+const TRIP_START = new Date(2026,8,23).getTime();
+function dayNo(dStr){
+  const [mm,dd] = dStr.split('/').map(Number);
+  return Math.round((new Date(2026, mm-1, dd).getTime() - TRIP_START)/86400000) + 1;
+}
+
+/* ---------- 时间轴 ---------- */
+(function buildRail(){
+  const rail = $('#rail');
+  const seen = new Set();
+  const nodes = [];
+  DAYS.forEach((d,i)=>{
+    if(seen.has(d.d)) return;
+    seen.add(d.d);
+    nodes.push({d, i});
+  });
+  const now = new Date();
+  nodes.forEach(({d,i})=>{
+    const n = el('div','node');
+    n.innerHTML = `<div class="nd">${d.d}</div><div class="nw">${d.w}</div><div class="pill" style="background:${PHASES[d.p].color}"></div>`;
+    // 判断是否今天
+    const [mm,dd] = d.d.split('/').map(Number);
+    const dt = new Date(2026, mm-1, dd);
+    const isToday = dt.getFullYear()===now.getFullYear() && dt.getMonth()===now.getMonth() && dt.getDate()===now.getDate();
+    if(isToday){ n.classList.add('today'); n.insertAdjacentHTML('afterbegin','<div class="today-dot">今天</div>'); }
+    if(dt < new Date(now.getFullYear(),now.getMonth(),now.getDate())) n.classList.add('past');
+    n.title = `${d.d} ${d.w} · ${PHASES[d.p].name}`;
+    n.onclick = ()=>{
+      const target = document.getElementById('day-'+i);
+      if(target){ target.classList.add('open'); target.scrollIntoView({behavior:'smooth',block:'center'}); }
+    };
+    rail.appendChild(n);
+  });
+})();
+
+/* ---------- 航班卡片 ---------- */
+(function buildFlights(){
+  const g = $('#flGrid');
+  FLIGHTS.forEach(f=>{
+    const c = el('div','fc');
+    c.innerHTML = `
+      <div class="top">
+        <div class="no">${f.no} · ${f.cls}</div>
+        <div class="route">${f.from} → ${f.to}</div>
+      </div>
+      <div class="body">
+        <div class="seg">
+          <div><div class="tm">${f.depLocal.split('）')[1] || f.depLocal}</div><div class="meta">起飞 ${f.depLocal}</div></div>
+          <div class="arw"></div>
+          <div style="text-align:right"><div class="tm">${f.arrLocal.split('）')[1] || f.arrLocal}</div><div class="meta">抵达 ${f.arrLocal}</div></div>
+        </div>
+        <div class="dur">⏱ 飞行时长 ${f.dur} ｜ ${f.extra}</div>
+        ${f.note ? `<div class="note">${f.note}</div>` : ''}
+        <div class="cd" data-dep="${f.depISO}" data-off="${offsetOf(f.depISO)}">
+          <div class="cl">⏳ 距离起飞</div>
+          <div class="cv">计算中…</div>
+          <div class="cm"></div>
+        </div>
+      </div>`;
+    g.appendChild(c);
+  });
+})();
+
+/* ---------- 酒店卡片 ---------- */
+(function buildHotels(){
+  const g = $('#hGrid');
+  HOTELS.forEach(h=>{
+    const c = el('div','hc');
+    c.innerHTML = `
+      <div class="hn">${h.n}</div>
+      <div class="hd">📆 ${h.d}</div>
+      <div class="ha">📍 ${h.a}</div>
+      ${h.c ? `<div class="hconf">✅ ${h.c}</div>` : ''}`;
+    g.appendChild(c);
+  });
+})();
+
+/* ---------- 逐日行程 ---------- */
+(function buildDays(){
+  const wrap = $('#dayList');
+  let lastP = -1;
+  DAYS.forEach((d,i)=>{
+    if(d.p !== lastP){
+      lastP = d.p;
+      const ph = PHASES[d.p];
+      const head = el('div','ph-head');
+      head.innerHTML = `<span class="ph-dot" style="background:${ph.color}"></span>
+        <span class="ph-name">${ph.name}</span>
+        <span class="ph-meta">${ph.meta}</span>
+        <span class="ph-line"></span>`;
+      head.dataset.ph = d.p;
+      wrap.appendChild(head);
+    }
+    const day = el('div','day');
+    day.id = 'day-'+i;
+    day.dataset.kind = d.kind;
+    day.dataset.p = d.p;
+    day.dataset.dayno = dayNo(d.d);
+    if(d.kind==='tour') day.classList.add('key');
+    if(d.kind==='flight') day.classList.add('fl');
+
+    const spots = (d.spots||[]).map(s=>`<span class="spot">${s}</span>`).join('');
+    const summary = d.summary.map(s=>`<li>${s}</li>`).join('');
+    const tips = (d.tips||[]).map(t=>`<li>${t}</li>`).join('');
+
+    day.innerHTML = `
+      <div class="d-head">
+        <div class="d-date">
+          <div class="dd">${d.d}</div>
+          <div class="dm">${d.m}</div>
+          <div class="dw">${d.w}</div>
+        </div>
+        <div class="d-main">
+          <div class="tl">
+            <span class="dno">D${dayNo(d.d)}</span>
+            <span class="d-title">${d.title}</span>
+            <span class="tag ${d.tagCls}">${d.tag}</span>
+          </div>
+          <div class="d-sub">${d.summary[0]}</div>
+          <div class="spots">${spots}</div>
+        </div>
+        <div class="d-arrow">▾</div>
+      </div>
+      <div class="d-body"><div><div class="d-inner">
+        <div class="blk">
+          <div class="bt">📌 行程安排</div>
+          <ul>${summary}</ul>
+          ${d.flight ? `<div class="f-info" data-fcd="${d.flight.iso}">✈️ ${d.flight.no}　${d.flight.txt}<span class="fcd"></span></div>` : ''}
+          ${d.warn ? `<div class="warn">${d.warn}</div>` : ''}
+          ${d.tip ? `<div class="tip">${d.tip}</div>` : ''}
+        </div>
+        ${tips ? `<div class="blk"><div class="bt">💡 实用贴士</div><ul>${tips}</ul></div>` : ''}
+      </div></div></div>`;
+
+    day.querySelector('.d-head').onclick = ()=> day.classList.toggle('open');
+    wrap.appendChild(day);
+  });
+})();
+
+/* ---------- 筛选 / 搜索 / 展开 ---------- */
+(function controls(){
+  const chips = [...document.querySelectorAll('.chip')];
+  const search = $('#search');
+  let filter = 'all', q = '';
+
+  function apply(){
+    let shown = 0;
+    document.querySelectorAll('.day').forEach(day=>{
+      const okF = filter==='all' || day.dataset.kind===filter;
+      const okQ = !q || day.textContent.toLowerCase().includes(q);
+      const vis = okF && okQ;
+      day.style.display = vis ? '' : 'none';
+      if(vis) shown++;
+    });
+    // 隐藏无内容的阶段标题
+    const heads = [...document.querySelectorAll('.ph-head')];
+    heads.forEach(h=>{
+      const p = h.dataset.ph;
+      const any = [...document.querySelectorAll(`.day[data-p="${p}"]`)].some(d=>d.style.display!=='none');
+      h.style.display = any ? '' : 'none';
+    });
+    $('#emptyBox').style.display = shown ? 'none' : '';
+  }
+
+  chips.forEach(c=>{
+    c.onclick = ()=>{
+      chips.forEach(x=>x.classList.remove('on'));
+      c.classList.add('on');
+      filter = c.dataset.f;
+      apply();
+    };
+  });
+  search.oninput = ()=>{ q = search.value.trim().toLowerCase(); apply(); };
+
+  let allOpen = false;
+  $('#toggleAll').onclick = ()=>{
+    allOpen = !allOpen;
+    document.querySelectorAll('.day').forEach(d=>{ if(d.style.display!=='none') d.classList.toggle('open', allOpen); });
+    $('#toggleAll').textContent = allOpen ? '收起全部' : '展开全部';
+  };
+})();
+
+/* ---------- 定位今天 / 自动展开近期行程 ---------- */
+(function locate(){
+  const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+
+  function dateObj(dStr){
+    const [mm,dd] = dStr.split('/').map(Number);
+    return new Date(2026, mm-1, dd);
+  }
+  // 找到"今天"或今天之后最近的一天
+  function nearestIdx(){
+    let idx = -1;
+    DAYS.forEach((d,i)=>{
+      const dt = dateObj(d.d);
+      if(idx === -1 && dt >= TODAY) idx = i;
+    });
+    if(idx === -1) idx = DAYS.length - 1; // 行程已结束 → 定位最后一天
+    return idx;
+  }
+
+  // 自动展开：今天 + 未来 2 天内的行程
+  DAYS.forEach((d,i)=>{
+    const dt = dateObj(d.d);
+    const gap = Math.round((dt - TODAY)/86400000);
+    if(gap >= 0 && gap <= 2){
+      const node = document.getElementById('day-'+i);
+      if(node) node.classList.add('open');
+    }
+  });
+
+  const btn = $('#jumpNow');
+  if(btn) btn.onclick = ()=>{
+    const i = nearestIdx();
+    const node = document.getElementById('day-'+i);
+    if(!node) return;
+    if(node.style.display === 'none'){ // 被筛选隐藏时先恢复
+      document.querySelector('.chip[data-f="all"]').click();
+    }
+    node.classList.add('open');
+    node.scrollIntoView({behavior:'smooth', block:'center'});
+    node.animate([{boxShadow:'0 0 0 0 rgba(255,158,79,.9)'},{boxShadow:'0 0 0 14px rgba(255,158,79,0)'}],{duration:900,iterations:2});
+  };
+})();
+
+/* ---------- 打包清单 ---------- */
+(function packing(){
+  const g = $('#packGrid');
+  const KEY = 'bali-pack-2026';
+  let saved = {};
+  // 本地存储（file:// 或隐私模式下可能不可用，全部包 try/catch 保证不中断交互）
+  const LS = {
+    get(){ try{ return JSON.parse(localStorage.getItem(KEY) || '{}'); }catch(e){ return {}; } },
+    set(v){ try{ localStorage.setItem(KEY, JSON.stringify(v)); }catch(e){} },
+    clear(){ try{ localStorage.removeItem(KEY); }catch(e){} }
+  };
+  try{ saved = LS.get(); }catch(e){ saved = {}; }
+
+  PACK.forEach(cat=>{
+    const box = el('div','pk');
+    box.innerHTML = `<h3><span class="em">${cat.e}</span>${cat.t}</h3>`;
+    const ul = el('ul','pl');
+    cat.items.forEach((it,idx)=>{
+      const id = cat.t + '|' + idx;
+      const li = el('li');
+      li.innerHTML = `<span class="pk-box">✓</span><span>${it}</span>`;
+      if(saved[id]) li.classList.add('done');
+      li.onclick = ()=>{
+        li.classList.toggle('done');
+        saved[id] = li.classList.contains('done');
+        LS.set(saved);
+        refresh();
+      };
+      ul.appendChild(li);
+    });
+    box.appendChild(ul);
+    g.appendChild(box);
+  });
+
+  function refresh(){
+    const all = document.querySelectorAll('.pl li').length;
+    const done = document.querySelectorAll('.pl li.done').length;
+    const pct = all ? Math.round(done/all*100) : 0;
+    $('#pkPct').textContent = pct + '%';
+    $('#pkFill').style.width = pct + '%';
+  }
+  refresh();
+
+  $('#pkReset').onclick = ()=>{
+    document.querySelectorAll('.pl li').forEach(li=>li.classList.remove('done'));
+    LS.clear(); saved = {};
+    refresh();
+  };
+})();
+
+/* ---------- 实用锦囊 ---------- */
+(function info(){
+  const g = $('#infoGrid');
+  INFO.forEach(c=>{
+    const box = el('div','ic');
+    let body = '';
+    if(c.type==='wx'){
+      body = `
+        <div class="wx"><span class="wxi">🇹🇭</span><div><div class="wxn">曼谷</div><div class="wxd">26-33°C ｜ 雨季末 · 午后阵雨</div></div></div>
+        <div class="wx"><span class="wxi">🇮🇩</span><div><div class="wxn">巴厘岛</div><div class="wxd">24-31°C ｜ 旱季末 · 湿热少雨</div></div></div>`;
+    }
+    body += c.rows.map(r=>`<div class="row"><span class="k">${r.k}</span><span class="v">${r.v}</span></div>`).join('');
+    box.innerHTML = `<h3><span>${c.e}</span>${c.t}</h3>${body}`;
+    g.appendChild(box);
+  });
+})();
+
+/* ============================================================
+   倒计时
+   ============================================================ */
+function diff(ms){
+  if(ms<=0) return null;
+  const s = Math.floor(ms/1000);
+  return {d:Math.floor(s/86400), h:Math.floor(s%86400/3600), m:Math.floor(s%3600/60), s:s%60};
+}
+let lastSec = -1, tripDone = false;
+function tick(){
+  const now = Date.now();
+
+  /* --- 主倒计时：最近一段未起飞的航班 --- */
+  let next = null, nextIdx = -1;
+  FLIGHTS.forEach((f,i)=>{
+    const t = new Date(f.depISO).getTime();
+    if(t > now && (!next || t < new Date(next.depISO).getTime())){ next = f; nextIdx = i; }
+  });
+
+  if(next){
+    const r = diff(new Date(next.depISO).getTime() - now);
+    $('#cdLabel').textContent = '⏳ 距离下一段航班起飞';
+    $('#cdTarget').textContent = `${next.no}　${next.from} → ${next.to}　${next.depLocal}`;
+    $('#cdD').textContent = r.d;
+    $('#cdH').textContent = pad(r.h);
+    $('#cdM').textContent = pad(r.m);
+    $('#cdS').textContent = pad(r.s);
+    $('#cdNextName').textContent = next.no;
+    $('#cdNextTime').textContent = `　起飞 ${next.depLocal}　抵达 ${next.arrLocal}`;
+    document.getElementById('cdUnits').style.display = '';
+
+    if(r.s !== lastSec){
+      lastSec = r.s;
+      const n = $('#cdS');
+      n.classList.add('tick');
+      setTimeout(()=>n.classList.remove('tick'), 240);
+    }
+  }else if(!tripDone){
+    tripDone = true;
+    $('#cdLabel').textContent = '🌺 全部航班已完成';
+    $('#cdTarget').textContent = '祝旅途愉快，欢迎回家';
+    document.getElementById('cdUnits').innerHTML = '<div class="cd-done" style="grid-column:1/-1">✈️ 旅程已结束 · 期待下一趟热岛计划</div>';
+    $('#cdNextName').textContent = '—';
+    $('#cdNextTime').textContent = '';
+  }
+
+  /* --- 每个航班卡片独立倒计时 --- */
+  document.querySelectorAll('.cd[data-dep]').forEach(cd=>{
+    const t = new Date(cd.dataset.dep).getTime();
+    const off = parseInt(cd.dataset.off, 10);
+    const box = cd.querySelector('.cv');
+    const cm = cd.querySelector('.cm');
+    const ms = t - now;
+    if(ms > 0){
+      const r = diff(ms);
+      cd.classList.remove('done');
+      cd.querySelector('.cl').textContent = '⏳ 距离起飞';
+      box.textContent = r.d > 0 ? `${r.d} 天 ${pad(r.h)}:${pad(r.m)}:${pad(r.s)}` : `${pad(r.h)}:${pad(r.m)}:${pad(r.s)}`;
+      // 建议提前 2 小时抵达机场，按"起飞机场当地时间"显示
+      cm.textContent = `建议 ${fmtAt(t - 2*3600*1000, off)} 抵达机场（当地时间）`;
+    }else{
+      cd.classList.add('done');
+      cd.querySelector('.cl').textContent = '✅ 该航班已起飞';
+      box.textContent = '已起飞 · 一路顺风';
+      box.classList.add('small');
+      cm.textContent = '';
+    }
+  });
+
+  /* --- 行程卡片内的航班倒计时 --- */
+  document.querySelectorAll('.f-info[data-fcd]').forEach(fi=>{
+    const t = new Date(fi.dataset.fcd).getTime();
+    const v = fi.querySelector('.fcd');
+    const ms = t - now;
+    if(ms > 0){
+      const r = diff(ms);
+      v.classList.remove('past');
+      v.textContent = '倒计时 ' + (r.d > 0 ? `${r.d}天 ${pad(r.h)}:${pad(r.m)}:${pad(r.s)}` : `${pad(r.h)}:${pad(r.m)}:${pad(r.s)}`);
+    }else{
+      v.classList.add('past');
+      v.textContent = '已起飞 ✓';
+    }
+  });
+
+  /* --- 旅程进度条 --- */
+  const pStart = new Date(2026,8,23,0,0,0).getTime();
+  const pEnd   = new Date(2026,9,9,23,59,59).getTime();
+  let pct = (now - pStart) / (pEnd - pStart) * 100;
+  pct = Math.max(0, Math.min(100, pct));
+  $('#progFill').style.width = pct.toFixed(1) + '%';
+  $('#progMark').style.left = pct.toFixed(1) + '%';
+  const dayNum = Math.round((new Date(now).setHours(0,0,0,0) - new Date(2026,8,23).getTime())/86400000) + 1;
+  $('#progTxt').textContent = now < pStart
+    ? `未开始 · 还有 ${Math.ceil((pStart - now)/86400000)} 天`
+    : (now > pEnd ? '已结束 · 100%' : `进行中 · 第 ${Math.min(17, Math.max(1, dayNum))} / 17 天（${pct.toFixed(1)}%）`);
+
+  /* --- 高亮今天/已过日期 --- */
+  const today = new Date();
+  const key = `${today.getMonth()+1}/${today.getDate()}`;
+  document.querySelectorAll('.day').forEach(day=>{
+    const dd = day.querySelector('.dd').textContent;
+    day.classList.toggle('today', dd === key && today.getFullYear()===2026);
+  });
+}
+tick();
+setInterval(tick, 1000);
+
+/* ============================================================
+   交互：导航高亮 / 回到顶部 / 滚动动画 / 数字滚动
+   ============================================================ */
+(function navFx(){
+  const links = [...document.querySelectorAll('.nav a')];
+  const secs = links.map(a=>document.querySelector(a.getAttribute('href')));
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY + 140;
+    let idx = 0;
+    secs.forEach((s,i)=>{ if(s && s.offsetTop <= y) idx = i; });
+    links.forEach((a,i)=>a.classList.toggle('on', i===idx));
+    $('#topBtn').classList.toggle('show', window.scrollY > 500);
+  }, {passive:true});
+  $('#topBtn').onclick = ()=> window.scrollTo({top:0, behavior:'smooth'});
+})();
+
+(function reveal(){
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.08});
+  document.querySelectorAll('.rv').forEach(n=>io.observe(n));
+})();
+
+(function counters(){
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const n = e.target, target = +n.dataset.count;
+      let cur = 0;
+      const step = Math.max(1, Math.ceil(target/28));
+      const t = setInterval(()=>{
+        cur += step;
+        if(cur >= target){ cur = target; clearInterval(t); }
+        n.textContent = cur;
+      }, 34);
+      io.unobserve(n);
+    });
+  }, {threshold:.4});
+  document.querySelectorAll('[data-count]').forEach(n=>io.observe(n));
+})();
+</script>
+</body>
+</html>
