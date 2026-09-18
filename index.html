@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion's Travel Hub</title>
+<style>
+:root{--cream:#FFF9F1;--sun:#FFC53D;--sunset:#FF9E4F;--coral:#FF7A5C;--ocean:#10B3A3;--palm:#37A474;--ink:#2A3A4B;--ink-2:#5E7183;--line:#F1E4D3;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background-image:radial-gradient(900px 520px at 8% -4%,rgba(255,197,61,.28),transparent 62%),radial-gradient(760px 480px at 96% 4%,rgba(55,191,220,.22),transparent 60%),radial-gradient(700px 500px at 50% 108%,rgba(255,122,92,.16),transparent 62%);background-attachment:fixed;}
+.card{max-width:680px;width:90%;text-align:center;padding:48px 36px;border-radius:28px;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);box-shadow:0 18px 44px rgba(180,140,90,.20);border:1px solid rgba(255,255,255,.95);}
+h1{font-size:clamp(28px,5vw,42px);font-weight:900;letter-spacing:-.5px;margin-bottom:10px;color:#20323F;}
+.sub{color:var(--ink-2);font-size:15px;font-weight:600;margin-bottom:28px;line-height:1.7;}
+.links{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+.link{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,#FFF4D9,#FFE1A8 26%,#FFC48C 52%,#FFAE9B 74%,#7FD9CF 100%);padding:18px 24px;border-radius:18px;font-weight:800;font-size:15px;transition:transform .25s ease,box-shadow .25s ease;box-shadow:0 4px 14px rgba(255,158,79,.20);}
+.link:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(255,158,79,.30);}
+.link .emoji{font-size:28px;}
+.link .arrow{margin-left:auto;font-size:20px;}
+footer{margin-top:32px;font-size:12px;color:var(--ink-2);font-weight:600;}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Orion's Travel Hub</h1>
+<p class="sub">Personal Travel Itineraries<br>Bookmark this page for all your travel plans</p>
+<div class="links">
+<a class="link" href="travel/">
+<span class="emoji">&#x1F9C3;</span>
+<span>Travel Itineraries</span>
+<span class="arrow">&rarr;</span>
+</a>
+</div>
+</div>
+<footer>Powered by GitHub Pages &middot; utronchan-coder.github.io</footer>
+</body>
+</html>
